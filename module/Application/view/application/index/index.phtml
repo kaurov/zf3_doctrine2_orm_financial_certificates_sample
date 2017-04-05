@@ -1,0 +1,56 @@
+<?php
+$this->headTitle('Certificates');
+
+$this->mainMenu()->setActiveItemId('home');
+
+$this->pageBreadcrumbs()->setItems([
+    'Home' => $this->url('home')
+]);
+?>
+
+<h1>Case Study: Financial Website</h1>
+<h2>Introduction</h2>
+<p>Our core business is to create financial websites for some of the top-tier financial institutions in the world. Those pages display information about financial products or so-called "certificates". We ask you to build a simple webpage which can display the characteristics of the certificates. Your code should be written in PHPS and be fully object-orientated. Using Zend Framework is not required, but would be a real plus. 
+</p>
+<h2>Tasks</h2>
+<ol>
+    <li>
+        <p>
+            The certificates are the most important element in your small application. A certificate has the following properties: 
+        </p>
+        <ul>
+            <li>ISIN </li>
+            <li>Trading Market (e.g. Frankfurt, London) </li>
+            <li>Currency</li> 
+            <li>Issuer</li> 
+            <li>Issuing Price </li>
+            <li>Current Price </li>
+        </ul>
+        <p>Please create a class "Certificate" with the above proper-ties, which should also be changeable on demand. You can design the class in the way you prefer and also add other classes when it's necessary. </p>
+
+
+    </li>
+    <li>
+        <p>
+            Each certificate has a history of prices which update every few seconds. Additionally, each product can have documents assigned to it. The documents may have varying types, e.g. a "Term Sheet"as a PDF document. 
+        </p>
+        <p>Please model those associations into your code. </p></li>
+    <li>Create two functions "displayAsHtml()" and "displa-yAsXml(); which render a certificate accordingly. This should happen as a HTML page and a XML file.     </li>
+    <li>
+        <p>In addition to the standard certificates, there are special types of certificates.</p> 
+        <p>Those feature additional properties:</p> 
+        <ul>
+            <li>Bonus-Certificates have a barrier level and you need to know if this barrier was hit or not.</li>
+            <li>Guarantee-Certificates have a participation rate.</li>
+        </ul>
+    </li>
+    <li>
+        <p>Please create a class "BonusCertificate" and "Guarantee-Certificate" and ensure that those special properties are also used in the display-Functions of Number 3.</p> 
+        <p>Additionally, please take care that Guarantee-Certificates mustn't be exported as XML. In such a case, please fire a meaningful exception. </p>
+    </li>
+    <li>
+        Please send us your code including all used frameworks and libraries in a single zip-File. If you want to get some extra points, we would love if you could send a simple class diagram with it. If you have any experience with Unit Tests in PHP, we would be also very keen to see it in this example; otherwise we'll show you how to do when you join us! 
+    </li>
+</ol>
+
+<h2>Click <a href="<?=$this->url('certificates')?>">'Certificates'</a> menu item to see the solution.</h2>

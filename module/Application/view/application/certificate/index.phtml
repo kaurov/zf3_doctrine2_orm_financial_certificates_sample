@@ -1,0 +1,54 @@
+<?php
+$this->headTitle('Certificates');
+
+$this->mainMenu()->setActiveItemId('certificates');
+
+$this->pageBreadcrumbs()->setItems([
+    'Home' => $this->url('home'),
+    'Certificates' => $this->url('certificates'),
+]);
+?>
+
+<h1>Certificates</h1>
+
+<div class="row">
+
+    <div class="col-md-8">
+
+        <?php
+        foreach ($certificates as $certificate)
+        {
+            $certificateArray = $certificateManager->toArray($certificate);
+            echo $this->DisplayCertificate()->displayAsHtml($certificateArray, true);
+        }
+
+        echo $this->paginationControl($certificates, 'Sliding', 'application/partial/paginator', array('route' => 'certificates'));
+        ?>
+
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Popular Markets</h3>
+            </div>
+            <div class="panel-body">
+                <?php
+                foreach ($this->marketCloud as $marketName => $frequency):
+                    ?>
+
+                    <a href="<?= $this->url('certificates', ['action' => 'index'], ['query' => ['market' => $marketName]]); ?>">                   
+
+                        <span style="font-size:<?= $this->escapeHtml(0.9 + $frequency * 3) ?>em">
+                            <?= $this->escapeHtml($marketName); ?>
+                        </span>
+
+                    </a>    
+
+                    <?php
+                endforeach;
+                ?>
+            </div>
+        </div>
+    </div>
+</div>

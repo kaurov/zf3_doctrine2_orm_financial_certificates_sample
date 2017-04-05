@@ -1,0 +1,25 @@
+<?php
+$this->headTitle('View Certificate - ' . $certificate->getTitle());
+
+$this->mainMenu()->setActiveItemId('certificates');
+
+$this->pageBreadcrumbs()->setItems([
+    'Home' => $this->url('home'),
+    'Certificates' => $this->url('certificates'),
+    $this->escapeHtml($certificate->getTitle()) => "",
+]);
+?>
+
+<a href="
+   <?= $this->url('certificates', ['action' => 'index']); ?>">
+    &lt;&lt; Back to list of certificates
+</a>
+
+
+
+
+<?php
+$certificateArray = $certificateManager->toArray($certificate);
+echo $this->DisplayCertificate()->displayAsHtml($certificateArray, false);
+?>
+
