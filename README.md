@@ -1,4 +1,4 @@
-Blog Sample
+Financial Certificates Sample
 ==================================================
 
 This sample is based on the Hello World sample and it shows how to:
@@ -63,7 +63,7 @@ quit
 Create tables and import data to database:
 
 ```
-mysql -u root -p blog < data/schema.mysql.sql
+mysql -u root -p zf3certificate < data/schema.mysql.sql
 ```
 
 Alternatively, you can run database migrations:
@@ -88,7 +88,7 @@ Then create an Apache virtual host. It should look like below:
 ```
 After creating the virtual host, restart Apache.
 
-Now you should be able to see the Blog website by visiting the link "http://localhost/". 
+Now you should be able to see the Fin.Certificates website by visiting the link "http://localhost/". 
  
 ## License
 
